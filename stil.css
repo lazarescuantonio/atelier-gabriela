@@ -1,0 +1,702 @@
+/* ═══════════════════════════════════════════════════════════════
+   stil.css — TEMA UNICĂ a proiectului Atelier Gabriela
+   Orice pagină a site-ului primește tema DOAR prin:
+     <link rel="stylesheet" href="stil.css">
+   Nicio pagină nu are voie la <style> propriu sau stiluri inline.
+   Harta secțiunilor: S00–S22 (detalii în CLAUDE.md, §4–5).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════ S00 · FONTURI (găzduite local — zero conexiuni către terți) ═══════════
+   Sursa: pachetele oficiale Fontsource (Cormorant Garamond + Manrope),
+   subseturile latin + latin-ext (diacriticele românești), doar woff2. */
+/* cormorant-garamond · latin-500 */
+/* cormorant-garamond-latin-500-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/cormorant-garamond-latin-500-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-ext-500 */
+/* cormorant-garamond-latin-ext-500-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/cormorant-garamond-latin-ext-500-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-600 */
+/* cormorant-garamond-latin-600-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/cormorant-garamond-latin-600-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-ext-600 */
+/* cormorant-garamond-latin-ext-600-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/cormorant-garamond-latin-ext-600-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-700 */
+/* cormorant-garamond-latin-700-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonturi/cormorant-garamond-latin-700-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-ext-700 */
+/* cormorant-garamond-latin-ext-700-normal */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonturi/cormorant-garamond-latin-ext-700-normal.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-500-italic */
+/* cormorant-garamond-latin-500-italic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/cormorant-garamond-latin-500-italic.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-ext-500-italic */
+/* cormorant-garamond-latin-ext-500-italic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/cormorant-garamond-latin-ext-500-italic.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-600-italic */
+/* cormorant-garamond-latin-600-italic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/cormorant-garamond-latin-600-italic.woff2) format('woff2');
+}
+
+/* cormorant-garamond · latin-ext-600-italic */
+/* cormorant-garamond-latin-ext-600-italic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/cormorant-garamond-latin-ext-600-italic.woff2) format('woff2');
+}
+
+/* manrope · latin-400 */
+/* manrope-latin-400-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonturi/manrope-latin-400-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-ext-400 */
+/* manrope-latin-ext-400-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonturi/manrope-latin-ext-400-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-500 */
+/* manrope-latin-500-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/manrope-latin-500-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-ext-500 */
+/* manrope-latin-ext-500-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonturi/manrope-latin-ext-500-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-600 */
+/* manrope-latin-600-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/manrope-latin-600-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-ext-600 */
+/* manrope-latin-ext-600-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonturi/manrope-latin-ext-600-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-700 */
+/* manrope-latin-700-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonturi/manrope-latin-700-normal.woff2) format('woff2');
+}
+
+/* manrope · latin-ext-700 */
+/* manrope-latin-ext-700-normal */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonturi/manrope-latin-ext-700-normal.woff2) format('woff2');
+}
+
+/* ============================================================
+   ATELIER GABRIELA — sistem de design
+   Paletă inspirată din materialele atelierului:
+   ceară de lumânare, mătase ivoire, eucalipt criogenat,
+   trandafiri pudrați, fir auriu.
+   ============================================================ */
+/* ═══════════ S01 · VARIABILE ȘI PALETĂ ═══════════ */
+:root{
+  --ivoriu:#FCFBF9;        /* fundal principal — mătase ivoire */
+  --ceara:#F5F1EB;         /* suprafață secundară — ceară caldă */
+  --hartie:#FFFFFF;        /* carduri */
+  --cacao:#29241F;         /* text principal */
+  --cacao-soft:#6F675E; /* întunecat pentru contrast AA la text mic */    /* text secundar */
+  --eucalipt:#BCA184;      /* accent principal — eucalipt criogenat */
+  --eucalipt-inchis:#29241F;
+  --eucalipt-pal:#EFE7DC;
+  --roz:#C89B92;        --roz-text:#9C5F55;   /* roz pentru litere: contrast AA */           /* trandafir pudrat */
+  --roz-pal:#F4E8E4;
+  --auriu:#BCA184;      --auriu-text:#7E694D; /* șampanie pentru litere: contrast AA */         /* fir auriu — doar detalii fine */
+  --auriu-pal:#F1E9DD;
+  --linie:rgba(41,36,31,.12);
+  --umbra:0 10px 28px -14px rgba(41,36,31,.10);
+  --umbra-mare:0 26px 52px -26px rgba(41,36,31,.16);
+  --radius:12px;
+  --font-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-text:"Manrope", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+/* ═══════════ S02 · BAZE ═══════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{
+  font-family:var(--font-text);
+  background:var(--ivoriu);
+  color:var(--cacao);
+  line-height:1.65;
+  font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--eucalipt-inchis);outline-offset:3px}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+h1,h2,h3{text-wrap:balance}
+section[id]{scroll-margin-top:84px} /* ancorele nu se ascund sub bara lipită */
+.btn:active{transform:translateY(0) scale(.97)}
+.piesa:active,.card-colectie:active,.card-sezon:active{transform:scale(.985)}
+.sari{position:absolute;left:-9999px;top:14px;z-index:100;background:var(--cacao);color:var(--ivoriu);
+  padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.85rem}
+.sari:focus-visible{left:14px}
+.nota-nojs{margin:0;padding:12px 18px;background:var(--cacao);color:var(--ivoriu);text-align:center;font-size:.9rem}
+.sprite{display:none}
+
+.wrap{max-width:1140px;margin-inline:auto;padding-inline:clamp(20px,4.5vw,44px)}
+
+/* ═══════════ S03 · TIPOGRAFIE ═══════════ */
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.1;letter-spacing:0}
+h1{font-size:clamp(2.9rem,6.2vw,4.8rem)}
+h2{font-size:clamp(2.1rem,4vw,3.1rem)}
+h3{font-size:1.4rem;font-weight:600}
+h1 em,h2 em{font-style:italic;font-weight:500;color:var(--roz-text)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--auriu-text);margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--auriu)}
+.lead{font-size:1.12rem;color:var(--cacao-soft);max-width:56ch}
+
+/* ═══════════ S04 · BUTOANE ═══════════ */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:15px 30px;border-radius:999px;
+  font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-plin{background:var(--cacao);color:var(--ivoriu)}
+.btn-plin:hover{background:#171310;transform:translateY(-1px);box-shadow:var(--umbra)}
+.btn-gol{border-color:var(--cacao);color:var(--cacao);background:transparent}
+.btn-gol:hover{border-color:var(--roz);color:var(--roz);transform:translateY(-1px)}
+.btn-ivoriu{background:var(--ivoriu);color:var(--eucalipt-inchis)}
+.btn-ivoriu:hover{background:#fff;transform:translateY(-1px);box-shadow:var(--umbra)}
+
+/* ═══════════ S05 · HEADER ═══════════ */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(252,251,249,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--linie);
+}
+.bara{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:36px;height:36px;color:var(--cacao)}
+.brand-nume{font-family:var(--font-display);font-weight:600;font-size:1.34rem;line-height:1.05}
+.brand-sub{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cacao-soft)}
+nav.principal{display:flex;align-items:center;gap:26px}
+nav.principal a:not(.btn){
+  text-decoration:none;font-weight:500;font-size:.96rem;color:var(--cacao);
+  position:relative;padding-block:4px;
+}
+nav.principal a:not(.btn)::after{
+  content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+  background:var(--roz);transition:width .22s ease;border-radius:999px;
+}
+nav.principal a:not(.btn):hover::after{width:100%}
+nav.principal .btn{padding:10px 20px;font-size:.9rem}
+#meniuBtn{
+  display:none;background:none;border:1px solid var(--linie);border-radius:12px;
+  padding:9px 11px;cursor:pointer;color:var(--cacao);
+}
+#meniuBtn svg{width:22px;height:22px;display:block}
+
+/* ═══════════ S06 · HERO ═══════════ */
+.hero{position:relative;overflow:hidden;background:var(--ivoriu)}
+.hero .wrap{
+  display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(30px,5vw,70px);
+  align-items:center;padding-block:clamp(48px,7vw,96px);
+}
+.hero-text p.lead{margin:22px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero-nota{margin-top:26px;display:flex;gap:10px;align-items:center;font-size:.9rem;color:var(--cacao-soft)}
+.hero-nota svg{width:17px;height:17px;color:var(--auriu);flex:none}
+
+/* scena lumânării — elementul-semnătură */
+.scena{position:relative;display:grid;place-items:center;min-height:380px}
+.scena::before{
+  content:"";position:absolute;inset:auto;width:min(420px,92%);aspect-ratio:1;
+  border-radius:50%;background:radial-gradient(circle at 50% 42%, var(--roz-pal) 0%, rgba(244,232,228,0) 70%);
+}
+.scena svg{position:relative;width:min(300px,74%);height:auto;filter:drop-shadow(0 22px 30px rgba(41,36,31,.14))}
+.flacara{transform-box:fill-box;transform-origin:50% 96%;animation:palpait 1.7s ease-in-out infinite alternate}
+.flacara-mica{transform-box:fill-box;transform-origin:50% 96%;animation:palpait 2.4s ease-in-out infinite alternate-reverse}
+.halou{transform-box:fill-box;transform-origin:center;animation:halou 2.6s ease-in-out infinite alternate}
+@keyframes palpait{
+  0%{transform:scale(1) skewX(0deg)}
+  38%{transform:scale(1.05,.93) skewX(2.4deg)}
+  72%{transform:scale(.95,1.06) skewX(-2deg)}
+  100%{transform:scale(1.02,.97) skewX(.6deg)}
+}
+@keyframes halou{from{opacity:.55;transform:scale(.94)}to{opacity:.9;transform:scale(1.06)}}
+
+/* ═══════════ S07 · SEPARATOR ÎNTRE SECȚIUNI ═══════════ */
+/* linie fină de șampanie, centrată între secțiuni */
+.dantela{height:72px;display:grid;place-items:center}
+.dantela::after{content:"";width:56px;height:1px;background:var(--auriu);opacity:.8}
+
+/* ═══════════ S08 · SCHELETUL SECȚIUNILOR ═══════════ */
+section{padding-block:clamp(56px,7vw,92px)}
+.cap-sectiune{max-width:640px;margin-bottom:clamp(30px,4vw,48px)}
+.cap-sectiune.centrat{margin-inline:auto;text-align:center}
+.cap-sectiune.centrat .eyebrow{justify-content:center}
+.cap-sectiune.centrat .eyebrow::before{display:none}
+.cap-sectiune p{margin-top:14px;color:var(--cacao-soft)}
+
+/* ═══════════ S09 · COLECȚII PRINCIPALE ═══════════ */
+#colectii{background:var(--ivoriu);padding-top:clamp(40px,5vw,64px)}
+.grila-colectii{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card-colectie{
+  background:var(--hartie);outline:1px solid var(--linie);outline-offset:-1px;border-radius:var(--radius);
+  overflow:hidden;text-decoration:none;display:flex;flex-direction:column;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.card-colectie:hover{transform:translateY(-4px);box-shadow:var(--umbra-mare)}
+.card-vitrina{aspect-ratio:4/3;display:grid;place-items:center;position:relative;overflow:hidden}
+.card-vitrina svg.motiv{width:74px;height:74px;color:var(--cacao-soft);opacity:.85;transition:transform .25s ease}
+.card-colectie:hover .card-vitrina svg.motiv{transform:scale(1.08)}
+.card-vitrina img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.card-colectie:hover .card-vitrina img{transform:scale(1.04)}
+.card-corp{padding:22px 24px 26px}
+.card-corp h3{margin-bottom:8px}
+.card-corp p{color:var(--cacao-soft);font-size:.95rem}
+.card-link{margin-top:14px;display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.92rem;color:var(--eucalipt-inchis)}
+.card-link svg{width:16px;height:16px;transition:transform .2s ease}
+.card-colectie:hover .card-link svg{transform:translateX(4px)}
+
+/* spălări discrete pentru vitrinele fără fotografie */
+.tinta-roz{background:linear-gradient(160deg,var(--roz-pal),#FBF5F3)}
+.tinta-eucalipt{background:linear-gradient(160deg,var(--eucalipt-pal),#F8F4EE)}
+.tinta-auriu{background:linear-gradient(160deg,var(--auriu-pal),#FAF5EC)}
+.tinta-ceara{background:linear-gradient(160deg,var(--ceara),#FAF7F2)}
+
+/* ═══════════ S10 · DECORAȚIUNI DE SEZON ═══════════ */
+#sezon{background:var(--ceara)}
+.grila-sezon{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card-sezon{
+  background:var(--hartie);border:1px solid var(--linie);border-radius:var(--radius);
+  padding:26px 22px;text-align:center;text-decoration:none;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.card-sezon:hover{transform:translateY(-4px);box-shadow:var(--umbra)}
+.card-sezon .insigna{
+  width:58px;height:58px;border-radius:50%;margin:0 auto 14px;
+  display:grid;place-items:center;
+  border:1px solid var(--linie);
+}
+.card-sezon .insigna svg{width:26px;height:26px;color:var(--cacao)}
+.card-sezon h3{font-size:1.15rem;margin-bottom:6px}
+.card-sezon p{font-size:.88rem;color:var(--cacao-soft)}
+
+/* ═══════════ S11 · PERSONALIZARE ═══════════ */
+#personalizare{background:var(--ivoriu)}
+.pasi{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;margin-top:10px}
+.pasi::before{ /* panglica punctată care leagă pașii — e o secvență reală */
+  content:"";position:absolute;top:33px;left:12%;right:12%;
+  border-top:2px dashed var(--roz);opacity:.55;
+}
+.pas{position:relative;text-align:center;padding:0 8px}
+.pas-numar{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 18px;
+  background:var(--hartie);border:1px solid var(--auriu);
+  display:grid;place-items:center;position:relative;
+  font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--auriu-text);
+}
+.pas h3{margin-bottom:8px}
+.pas p{color:var(--cacao-soft);font-size:.95rem}
+.personalizare-cta{text-align:center;margin-top:44px}
+
+/* ═══════════ S12 · TRANSFORMĂRI (ÎNAINTE/DUPĂ) ═══════════ */
+#transformari{background:var(--ivoriu);padding-top:0}
+.grila-transformari{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:26px}
+.transformare{
+  background:var(--hartie);border:1px solid var(--linie);border-radius:var(--radius);
+  padding:22px 22px 18px;margin:0;
+}
+.trans-pereche{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.trans-cadru{position:relative}
+.trans-foto{aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:var(--ceara);display:grid;place-items:center}
+.trans-foto img{width:100%;height:100%;object-fit:cover}
+.trans-foto svg{width:40px;height:40px;color:var(--cacao-soft);opacity:.7}
+.trans-eticheta{
+  position:absolute;top:10px;left:10px;z-index:1;
+  background:rgba(41,36,31,.78);color:var(--ivoriu);
+  font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;
+}
+.trans-eticheta.eticheta-dupa{background:var(--eucalipt-inchis)}
+.trans-sageata{color:var(--auriu);display:grid;place-items:center}
+.trans-sageata svg{width:26px;height:26px}
+.transformare figcaption{margin-top:14px;font-size:.93rem;color:var(--cacao-soft);text-align:center}
+
+/* ═══════════ S13 · BUTON ÎNAPOI SUS ═══════════ */
+#susBtn{
+  position:fixed;right:18px;bottom:18px;z-index:40;
+  width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
+  background:var(--eucalipt-inchis);color:var(--ivoriu);
+  display:grid;place-items:center;box-shadow:var(--umbra-mare);
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease;
+}
+#susBtn.vizibil{opacity:1;transform:none;pointer-events:auto}
+#susBtn svg{width:20px;height:20px;transform:rotate(-90deg)}
+#susBtn:active{transform:scale(.94)}
+
+/* ═══════════ S14 · GALERIE ═══════════ */
+.cautare{position:relative;max-width:420px;margin:0 auto 20px}
+.cautare svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--cacao-soft);pointer-events:none}
+.cautare input{
+  width:100%;padding:13px 20px 13px 46px;border-radius:999px;
+  border:1px solid var(--linie);background:var(--hartie);color:var(--cacao);
+  font-family:var(--font-text);font-size:.95rem;
+}
+.cautare input::placeholder{color:var(--cacao-soft);opacity:.8}
+.cautare input:focus{outline:none;border-color:var(--auriu)}
+.galerie-stare{text-align:center;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--cacao-soft);margin:-14px 0 26px}
+.mai-multe{text-align:center;margin-top:34px}
+.gol-galerie{grid-column:1/-1;text-align:center;padding:44px 20px;color:var(--cacao-soft)}
+.gol-galerie strong{display:block;font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--cacao);margin-bottom:10px}
+.gol-galerie a{color:var(--eucalipt-inchis);font-weight:600}
+.vitrina-nav-produs{display:flex;justify-content:space-between;gap:12px;margin-top:14px;border-top:1px solid var(--linie);padding-top:14px}
+.vitrina-nav-produs button{background:none;border:none;cursor:pointer;font-family:var(--font-text);font-size:.85rem;font-weight:600;color:var(--cacao-soft);padding:6px 2px}
+.vitrina-nav-produs button:hover{color:var(--roz)}
+#galerie{background:var(--ceara)}
+.filtre{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.filtru{
+  padding:9px 18px;border-radius:999px;border:1px solid var(--linie);
+  background:var(--hartie);color:var(--cacao);font-weight:600;font-size:.88rem;
+  cursor:pointer;transition:all .18s ease;font-family:var(--font-text);
+}
+.filtru:hover{border-color:var(--eucalipt)}
+.filtru[aria-pressed="true"]{background:var(--eucalipt-inchis);border-color:var(--eucalipt-inchis);color:var(--ivoriu)}
+.grila-galerie{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.piesa{
+  display:flex;flex-direction:column; /* butoanele își centrează nativ conținutul pe verticală — anulat aici */
+  background:var(--hartie);outline:1px solid var(--linie);outline-offset:-1px;border-radius:var(--radius);
+  overflow:hidden;cursor:pointer;text-align:left;padding:0;font-family:var(--font-text);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.piesa:hover{transform:translateY(-4px);box-shadow:var(--umbra-mare)}
+.piesa-foto{aspect-ratio:5/4;display:grid;place-items:center;overflow:hidden;position:relative}
+.piesa-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.piesa-foto svg{width:56px;height:56px;color:var(--cacao-soft);opacity:.8}
+.piesa-info{flex:1;padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px}
+.piesa-info h3{font-size:1.02rem;font-family:var(--font-text);font-weight:700}
+.piesa-cat{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--auriu-text);font-weight:700}
+.piesa-pret{font-weight:700;color:var(--roz-text);font-size:.95rem}
+.galerie-nota{text-align:center;margin-top:32px;color:var(--cacao-soft);font-size:.92rem}
+.galerie-nota a{color:var(--eucalipt-inchis);font-weight:600}
+
+/* ═══════════ S15 · DESPRE ═══════════ */
+#despre{background:var(--ivoriu)}
+#despre .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center}
+#despre .lead{margin-top:16px}
+#despre .text-suplimentar{margin-top:16px;color:var(--cacao-soft)}
+.card-materiale{
+  background:var(--hartie);border:1px solid var(--linie);border-radius:var(--radius);
+  padding:32px 32px 28px;
+}
+.card-materiale h3{margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.card-materiale h3 svg{width:20px;height:20px;color:var(--auriu)}
+.card-materiale ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.card-materiale li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:var(--cacao-soft)}
+.card-materiale li strong{color:var(--cacao)}
+.card-materiale li svg{width:19px;height:19px;color:var(--eucalipt);flex:none;margin-top:3px}
+
+/* ═══════════ S16 · CONTACT ═══════════ */
+#contact{background:var(--eucalipt-inchis);color:var(--ivoriu)}
+#contact .cap-sectiune p{color:rgba(252,251,249,.78)}
+#contact .eyebrow{color:var(--auriu-pal)}
+#contact .eyebrow::before{background:var(--auriu-pal)}
+#contact .contact-intro{margin-top:14px;color:rgba(252,251,249,.78)}
+.contact-grila{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:start}
+.contact-actiuni{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.contact-actiuni .btn{justify-content:flex-start;width:fit-content}
+.card-program{
+  background:rgba(252,251,249,.08);border:1px solid rgba(252,251,249,.22);
+  border-radius:var(--radius);padding:28px 30px;
+}
+.card-program h3{margin-bottom:14px;color:var(--ivoriu)}
+.card-program p{color:rgba(252,251,249,.82);font-size:.96rem;margin-bottom:10px}
+.card-program .detaliu{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px}
+.card-program .detaliu svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--auriu-pal)}
+
+/* cardul hărții: adresa + harta Google încărcată doar la atingere */
+.card-harta{
+  grid-column:2;background:rgba(250,248,245,.08);border:1px solid rgba(250,248,245,.22);
+  border-radius:var(--radius);padding:28px 30px;margin-top:24px;
+}
+.card-harta h3{margin-bottom:10px;color:var(--ivoriu);display:flex;align-items:center;gap:10px}
+.card-harta h3 svg{width:20px;height:20px;color:var(--auriu-pal)}
+.harta-adresa{color:rgba(250,248,245,.82);font-size:.96rem;margin-bottom:16px}
+.harta-cadru{aspect-ratio:16/10;border-radius:12px;overflow:hidden;border:1px solid rgba(250,248,245,.22);margin-bottom:16px}
+.harta-cadru iframe{width:100%;height:100%;border:0;display:block}
+#hartaIncarca{
+  width:100%;height:100%;display:grid;place-items:center;align-content:center;gap:10px;
+  background:rgba(250,248,245,.05);border:none;cursor:pointer;color:var(--ivoriu);
+  font-family:var(--font-text);padding:20px;text-align:center;
+}
+#hartaIncarca:hover{background:rgba(250,248,245,.1)}
+#hartaIncarca svg{width:34px;height:34px;color:var(--auriu-pal)}
+#hartaIncarca span{font-weight:600;font-size:.95rem}
+#hartaIncarca small{color:rgba(250,248,245,.62);font-size:.8rem;max-width:34ch;line-height:1.5}
+
+/* ═══════════ S17 · FOOTER ═══════════ */
+footer{background:var(--eucalipt-inchis);color:rgba(252,251,249,.7);border-top:1px solid rgba(252,251,249,.16)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;padding-block:26px;font-size:.88rem}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+footer a{color:rgba(252,251,249,.85);text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+
+/* ═══════════ S18 · LIGHTBOX PRODUS ═══════════ */
+dialog#vitrina{
+  border:none;border-radius:16px;padding:0;
+  width:min(880px,92vw);max-width:min(880px,92vw);
+  max-height:90vh;max-height:90dvh;overflow:auto;
+  background:var(--hartie);box-shadow:var(--umbra-mare);
+}
+dialog#vitrina::backdrop{background:rgba(41,36,31,.55);backdrop-filter:blur(3px)}
+.vitrina-corp{display:grid;grid-template-columns:1.1fr .9fr;border-radius:inherit;overflow:hidden}
+.vitrina-foto{aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.vitrina-foto img{width:100%;height:100%;object-fit:cover}
+.vitrina-foto svg{width:80px;height:80px;color:var(--cacao-soft);opacity:.8}
+.vitrina-text{padding:34px 32px;display:flex;flex-direction:column;gap:12px}
+.vitrina-text h3{font-size:1.45rem}
+.vitrina-text p{color:var(--cacao-soft);font-size:.97rem}
+.vitrina-pret{font-weight:700;color:var(--roz-text);font-size:1.08rem}
+.vitrina-text .btn{margin-top:auto;width:fit-content}
+#inchideVitrina{
+  position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+  border:none;background:var(--ivoriu);color:var(--cacao);cursor:pointer;
+  display:grid;place-items:center;box-shadow:var(--umbra);z-index:2;
+}
+
+/* carusel media în lightbox (mai multe poze / video pe produs) */
+.vitrina-media{position:relative;overflow:hidden}
+.vitrina-foto video{width:100%;height:100%;object-fit:cover;display:block;background:#241d17}
+.piesa-foto video{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.vitrina-nav{
+  position:absolute;top:50%;transform:translateY(-50%);left:12px;
+  width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;
+  background:rgba(252,251,249,.94);color:var(--cacao);
+  display:grid;place-items:center;box-shadow:var(--umbra);
+  transition:transform .15s ease, background-color .15s ease;
+}
+.vitrina-nav:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
+.vitrina-nav svg{width:18px;height:18px;transform:rotate(180deg)}
+.vitrina-nav.dreapta{left:auto;right:12px}
+.vitrina-nav.dreapta svg{transform:none}
+.vitrina-contor{
+  position:absolute;bottom:12px;right:14px;
+  background:rgba(41,36,31,.75);color:var(--ivoriu);
+  font-size:.78rem;font-weight:600;padding:4px 11px;border-radius:999px;
+}
+.piesa-badge{
+  position:absolute;bottom:10px;right:10px;
+  background:rgba(41,36,31,.72);color:var(--ivoriu);
+  font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:999px;
+  display:inline-flex;gap:5px;align-items:center;
+}
+.piesa-badge svg{width:12px;height:12px}
+#inchideVitrina svg{width:18px;height:18px}
+
+/* ═══════════ S19 · ANIMAȚII DE APARIȚIE ═══════════ */
+/* active doar cu JavaScript (clasa .js pe <html>); fără JS totul e vizibil */
+.js .aparitie{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+.js .aparitie.vizibil{opacity:1;transform:none}
+
+
+/* ═══════════ S22 · PAGINA 404 ═══════════ */
+.pagina-404{min-height:100vh;display:grid;place-items:center;text-align:center;padding:24px;background:var(--ivoriu)}
+.pagina-404 .semn{width:56px;height:1px;background:var(--auriu);margin:0 auto 26px}
+.pagina-404 p{max-width:46ch;margin:12px auto 30px}
+
+/* ═══════════ S20 · RESPONSIVE ═══════════ */
+/* Tabletă (portret): grile pe 2 coloane, al 3-lea card de colecție pe tot rândul */
+@media (max-width:960px){
+  .card-harta{grid-column:auto}
+  .grila-colectii{grid-template-columns:1fr 1fr}
+  .grila-sezon{grid-template-columns:1fr 1fr}
+  .grila-galerie{grid-template-columns:1fr 1fr}
+  #despre .wrap{grid-template-columns:1fr}
+  .contact-grila{grid-template-columns:1fr}
+}
+@media (min-width:721px) and (max-width:960px){
+  .grila-colectii > .card-colectie:last-child{grid-column:1/-1}
+  .grila-colectii > .card-colectie:last-child .card-vitrina{aspect-ratio:21/9}
+}
+
+/* Tabletă mică / telefon mare: hero pe o coloană, textul primul */
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:44px 34px;gap:8px}
+  .scena{min-height:auto;margin-top:30px}
+  .scena svg{width:min(220px,54%)}
+  .scena::before{width:min(340px,84%)}
+}
+
+/* Telefon */
+@media (max-width:720px){
+  .grila-colectii{grid-template-columns:1fr}
+  .grila-galerie{grid-template-columns:1fr}
+  .pasi{grid-template-columns:1fr;gap:34px}
+  .pasi::before{display:none}
+
+  /* filtrele devin o bandă glisabilă, de la margine la margine */
+  .filtre{
+    flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin-inline:calc(-1*clamp(20px,4.5vw,44px));
+    padding-inline:clamp(20px,4.5vw,44px);padding-bottom:6px;
+  }
+  .filtre::-webkit-scrollbar{display:none}
+  .filtru{flex:none;padding:13px 20px} /* țintă de atingere ≥44pt */
+
+  .vitrina-corp{grid-template-columns:1fr}
+  .vitrina-foto{aspect-ratio:4/3}
+  .vitrina-text{padding:24px 22px 26px}
+  .vitrina-nav{width:46px;height:46px} /* săgeți mai ușor de atins */
+
+  #meniuBtn{display:grid;place-items:center;min-width:44px;min-height:44px}
+  nav.principal{
+    position:absolute;top:100%;left:0;right:0; /* ancorat de bară, indiferent de înălțimea ei */
+    background:var(--ivoriu);
+    flex-direction:column;align-items:stretch;gap:0;
+    border-bottom:1px solid var(--linie);box-shadow:var(--umbra-mare);
+    display:none;padding:10px 22px 22px;
+    max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow:auto;
+  }
+  nav.principal.deschis{display:flex}
+  nav.principal a:not(.btn){padding:14px 4px;border-bottom:1px solid var(--linie)}
+  nav.principal .btn{margin-top:16px;justify-content:center;padding:14px 20px}
+}
+
+/* Telefon îngust: butoanele principale pe toată lățimea, ușor de atins cu degetul mare */
+@media (max-width:520px){
+  .grila-sezon{grid-template-columns:1fr}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{justify-content:center}
+  .contact-actiuni .btn{width:100%;justify-content:center}
+  .card-harta .btn{width:100%;justify-content:center}
+  .personalizare-cta .btn{width:100%;justify-content:center}
+  .card-corp{padding:20px 20px 24px}
+  body{font-size:16px}
+}
+
+/* ═══════════ S20b · DISPOZITIVE TACTILE (orice orientare) ═══════════ */
+/* Un telefon în landscape primește lățimi de desktop, dar degetul rămâne deget:
+   țintele de atingere se garantează după tipul de arătător, nu după lățime. */
+@media (hover:none) and (pointer:coarse){
+  .filtru{min-height:44px}
+  .cautare input{min-height:44px}
+  .vitrina-nav-produs button{min-height:44px}
+  nav.principal a:not(.btn){min-height:44px;display:inline-flex;align-items:center}
+}
+
+/* ═══════════ S21 · MIȘCARE REDUSĂ ═══════════ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .flacara,.flacara-mica,.halou{animation:none}
+  .js .aparitie{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms !important}
+}

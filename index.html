@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<script>
+document.documentElement.classList.add("js");
+/* Plasă de siguranță: dacă stil.css nu e lângă index.html (fișier deschis singur,
+   în afara folderului complet), pagina explică singură ce lipsește. */
+window.addEventListener("load", function () {
+  if (getComputedStyle(document.documentElement).getPropertyValue("--ivoriu").trim()) return;
+  var b = document.createElement("div");
+  b.textContent = "Tema site-ului nu s-a găsit: fișierul stil.css trebuie să stea în același folder cu index.html. Dezarhivează pachetul complet și deschide index.html din folderul rezultat — sau vezi site-ul publicat online.";
+  b.style.cssText = "position:sticky;top:0;z-index:99;background:#7C2D2D;color:#fff;padding:14px 18px;font:600 15px/1.5 system-ui,sans-serif;text-align:center";
+  document.body.prepend(b);
+});
+</script>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-FGImOa8qeWEjeV7JdCKma0QBQ3QqLyJdYEtwTBm65w0='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://maps.google.com https://consent.google.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FCFBF9">
+<title>Atelier Gabriela — Handmade cu suflet | Lumânări de botez, buchete de nuntă, decorațiuni</title>
+<meta name="description" content="Atelier de familie: lumânări de botez unicat, buchete de mireasă din flori de mătase premium și flori criogenate, tăvițe de moț și decorațiuni de sezon, lucrate manual. Personalizăm orice model după poza ta.">
+<!-- Previzualizare frumoasă când site-ul e distribuit pe Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:title" content="Atelier Gabriela — Handmade cu suflet">
+<meta property="og:description" content="Lumânări de botez, buchete de mireasă din mătase și flori criogenate, tăvițe de moț și decorațiuni de sezon — lucrate manual, personalizate după poza ta.">
+<meta property="og:image" content="poze/coperta.jpg"><!-- după ce adaugi pozele: alege o poză frumoasă, orizontală, și salveaz-o ca poze/coperta.jpg -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Atelier Gabriela",
+ "description":"Atelier de familie: lumânări de botez, buchete de nuntă din flori de mătase și flori criogenate, tăvițe de moț și decorațiuni handmade personalizate.",
+ "sameAs":["https://facebook.com/lazarescugabriela11"],"areaServed":"România"}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕯️</text></svg>">
+<link rel="preload" as="font" type="font/woff2" href="fonturi/manrope-latin-ext-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonturi/manrope-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonturi/cormorant-garamond-latin-ext-600-normal.woff2" crossorigin>
+<!-- ═══════════════════════════════════════════════════════════════
+     CUPRINS — structura proiectului
+     STIL — fișierul stil.css:   S00 Fonturi · S01 Variabile · S02 Baze · S03 Tipografie
+       S04 Butoane · S05 Header · S06 Hero · S07 Separator · S08 Secțiuni
+       S09 Colecții · S10 Sezon · S11 Personalizare · S12 Transformări
+       S13 Buton sus · S14 Galerie · S15 Despre · S16 Contact · S17 Footer
+       S18 Lightbox · S19 Animații · S20 Responsive · S20b Tactil
+       S21 Mișcare redusă · S22 Pagina 404
+     CORP (conținutul paginii):   C00 Sprite iconițe · C01 Header · C02 Hero
+       C03 Colecții · C04 Sezon · C05 Personalizare · C06 Transformări
+       C07 Galerie · C08 Despre · C09 Contact · C10 Footer
+       C11 Buton sus · C12 Lightbox
+     DATE — fișierul date.js:  ZONA DE EDITARE (config + conținut)
+     LOGICĂ — mecanica.js:  mecanica site-ului (nu se modifică)
+     Regulile complete ale proiectului: CLAUDE.md
+     ═══════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="stil.css">
+</head>
+<body>
+<a class="sari" href="#colectii">Sari la conținut</a>
+<noscript>
+  <p class="nota-nojs">
+    Vezi varianta simplă a paginii (fără galeria interactivă). Site-ul publicat online funcționează complet, cu tot cu galerie.
+  </p>
+</noscript>
+
+<!-- ═══════════ C00 · SPRITE DE ICONIȚE (desenate manual) ═══════════ -->
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+  <symbol id="ic-lumanare" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.5c1.5 2.1 2.4 3.5 2.4 4.8a2.4 2.4 0 1 1-4.8 0c0-1.3.9-2.7 2.4-4.8Z"/>
+    <rect x="8.8" y="11" width="6.4" height="10" rx="1.6"/><path d="M12 8.9V11"/>
+  </symbol>
+  <symbol id="ic-buchet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="7.5" r="2"/><circle cx="8.6" cy="5.8" r="1.7"/><circle cx="15.4" cy="5.8" r="1.7"/>
+    <circle cx="9" cy="9.6" r="1.7"/><circle cx="15" cy="9.6" r="1.7"/>
+    <path d="M12 11.5V17m0 0-4.4 4.5M12 17l4.4 4.5M7.6 21.5h8.8"/>
+  </symbol>
+  <symbol id="ic-tavita" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 9h16"/><path d="M5.2 9c0 3.4 3 5.6 6.8 5.6s6.8-2.2 6.8-5.6"/>
+    <path d="M12 14.6v4.4"/><path d="M8 21h8"/><path d="M9.8 6.8c.6-1.2 1.4-1.8 2.2-1.8s1.6.6 2.2 1.8"/>
+  </symbol>
+  <symbol id="ic-toca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 9.5 12 5l9.5 4.5L12 14 2.5 9.5Z"/><path d="M6.5 11.5v4.2c0 1.5 2.5 2.8 5.5 2.8s5.5-1.3 5.5-2.8v-4.2"/><path d="M21.5 9.5v5"/>
+  </symbol>
+  <symbol id="ic-ou" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.8c3.6 0 6.5 5.4 6.5 10.2a6.5 6.5 0 1 1-13 0C5.5 8.2 8.4 2.8 12 2.8Z"/>
+    <path d="M6 12.5l2-1.4 2 1.4 2-1.4 2 1.4 2-1.4 2 1.4"/>
+  </symbol>
+  <symbol id="ic-brad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.8 7.4 9h2.2L5.8 14.4h2.4L4 20h16l-4.2-5.6h2.4L14.4 9h2.2L12 2.8Z"/><path d="M12 20v2.2"/>
+  </symbol>
+  <symbol id="ic-inima" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 20.5S3.5 15.2 3.5 9.3A4.6 4.6 0 0 1 12 6.9a4.6 4.6 0 0 1 8.5 2.4c0 5.9-8.5 11.2-8.5 11.2Z"/>
+  </symbol>
+  <symbol id="ic-sageata" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 12h15m-6-6 6 6-6 6"/>
+  </symbol>
+  <symbol id="ic-scanteie" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2.5 14 9l6.5 2L14 13.5 12 20l-2-6.5L3.5 11 10 9l2-6.5Z"/>
+  </symbol>
+  <symbol id="ic-frunza" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 19C5 9 11 4 20 4c0 9-5 15-15 15Z"/><path d="M5 19c3-5 7-9 11-11"/>
+  </symbol>
+  <symbol id="ic-mesaj" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-4.6A8.5 8.5 0 1 1 21 11.5Z"/>
+    <path d="m7.5 12 3-3 2.5 2.5 3.5-3"/>
+  </symbol>
+  <symbol id="ic-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9.2"/><path d="M14.8 8.2h-1.6c-.9 0-1.5.6-1.5 1.6v1.5h3l-.4 2.6h-2.6v6.9"/>
+  </symbol>
+  <symbol id="ic-telefon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.5 3.5h3.2l1.6 4-2 1.6a12.6 12.6 0 0 0 6.6 6.6l1.6-2 4 1.6v3.2c0 1-.9 1.9-1.9 1.8C10.4 19.8 4.2 13.6 3.6 5.4c0-1 .9-1.9 1.9-1.9Z"/>
+  </symbol>
+  <symbol id="ic-ceas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>
+  </symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 21.5s7-6.2 7-11.5a7 7 0 1 0-14 0c0 5.3 7 11.5 7 11.5Z"/><circle cx="12" cy="9.8" r="2.6"/>
+  </symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <path d="m6 6 12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="ic-meniu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </symbol>
+  <symbol id="ic-tablou" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="4.5" width="17" height="15" rx="2"/><circle cx="9" cy="10" r="1.8"/>
+    <path d="M6 19 12.5 12l4 4.5L20.5 13"/>
+  </symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5 12.5 4.5 4.5L19 7.5"/>
+  </symbol>
+  <symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/>
+    <path d="M9 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.1.2-.1.3 0 .5a6.6 6.6 0 0 0 2.5 2.4c.2.1.4.1.5-.1l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5v.6c0 .3-.2.6-.5.7-.5.2-1.2.4-2.1.1a9.4 9.4 0 0 1-4.2-3.2c-.7-1-1.2-2-1.2-2.8 0-.6.1-1 .1-1.5Z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M8 5.2v13.6L19 12 8 5.2Z"/>
+  </symbol>
+  <symbol id="ic-cautare" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+    <circle cx="11" cy="11" r="6.5"/><path d="m20.5 20.5-4.7-4.7"/>
+  </symbol>
+  <symbol id="ic-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ic-foto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.2" r="3.4"/><path d="M8.5 7 10 4.5h4L15.5 7"/>
+  </symbol>
+</svg>
+
+<!-- ═══════════ C01 · HEADER ═══════════ -->
+<header>
+  <div class="wrap bara">
+    <a class="brand" href="#sus">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="var(--eucalipt-pal)"/>
+        <use href="#ic-lumanare" x="8" y="8" width="24" height="24"/>
+      </svg>
+      <span>
+        <span class="brand-nume">Atelier Gabriela</span><br>
+        <span class="brand-sub">handmade cu suflet</span>
+      </span>
+    </a>
+    <button id="meniuBtn" aria-expanded="false" aria-controls="navPrincipal" aria-label="Deschide meniul">
+      <svg><use href="#ic-meniu"/></svg>
+    </button>
+    <nav class="principal" id="navPrincipal" aria-label="Meniu principal">
+      <a href="#colectii">Colecții</a>
+      <a href="#personalizare">Personalizare</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-plin" data-contact="messenger" href="#contact">
+        <svg><use href="#ic-mesaj"/></svg>Trimite un mesaj
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="sus">
+
+<!-- ═══════════ C02 · HERO ═══════════ -->
+<section class="hero" aria-label="Prezentare atelier">
+  <div class="wrap">
+    <div class="hero-text aparitie">
+      <span class="eyebrow">Atelier de familie · lucrat manual</span>
+      <h1>Zilele mari merită lucruri <em>făcute de mână</em>.</h1>
+      <p class="lead">De la lumânări de botez la buchete de mireasă din mătase fină sau flori criogenate, Gabriela creează — bucată cu bucată — decorațiuni care fac fiecare sărbătoare de neuitat.</p>
+      <div class="hero-cta">
+        <a class="btn btn-plin" href="#colectii">Descoperă colecțiile</a>
+        <a class="btn btn-gol" href="#personalizare">Vreau un model personalizat <svg><use href="#ic-sageata"/></svg></a>
+      </div>
+      <p class="hero-nota"><svg><use href="#ic-scanteie"/></svg> Fiecare piesă este unicat &nbsp;·&nbsp; Personalizăm după poza ta</p>
+    </div>
+
+    <!-- Lumânarea atelierului — flacăra pâlpâie ușor -->
+    <div class="scena aparitie" aria-hidden="true">
+      <svg viewBox="0 0 320 440" role="img" aria-label="Ilustrație în linie fină: lumânare cu panglică și flori">
+        <defs>
+          <radialGradient id="gHalou" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#BCA184" stop-opacity=".26"/><stop offset="1" stop-color="#BCA184" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <ellipse class="halou" cx="160" cy="86" rx="58" ry="64" fill="url(#gHalou)"/>
+        <g class="flacara">
+          <path d="M160 38 C174 62 182 82 182 98 A22 22 0 0 1 138 98 C138 82 146 62 160 38 Z"
+                fill="#FBF1E2" stroke="#BCA184" stroke-width="2"/>
+        </g>
+        <g class="flacara-mica">
+          <path d="M160 70 C166 82 169 91 169 98 A9 9 0 0 1 151 98 C151 91 154 82 160 70 Z"
+                fill="#C89B92" opacity=".5"/>
+        </g>
+        <line x1="160" y1="112" x2="160" y2="124" stroke="#29241F" stroke-width="2.4" stroke-linecap="round"/>
+        <rect x="136" y="124" width="48" height="236" rx="10" fill="#FFFDFB" stroke="#29241F" stroke-width="2"/>
+        <path d="M141 124 q3 12 -1 20" fill="none" stroke="#E9E2D8" stroke-width="3" stroke-linecap="round"/>
+        <line x1="128" y1="258" x2="192" y2="258" stroke="#29241F" stroke-width="2"/>
+        <line x1="128" y1="272" x2="192" y2="272" stroke="#29241F" stroke-width="2"/>
+        <path d="M160 265 c-15 -12 -31 -8 -31 2 s16 14 31 -2 Z" fill="#FCFBF9" stroke="#29241F" stroke-width="2"/>
+        <path d="M160 265 c15 -12 31 -8 31 2 s-16 14 -31 -2 Z" fill="#FCFBF9" stroke="#29241F" stroke-width="2"/>
+        <circle cx="160" cy="265" r="5.5" fill="#C89B92"/>
+        <path d="M154 274 l-10 26 M166 274 l10 26" fill="none" stroke="#29241F" stroke-width="2" stroke-linecap="round"/>
+        <g fill="none" stroke="#29241F" stroke-width="2" stroke-linecap="round">
+          <circle cx="132" cy="382" r="16" fill="#F4E8E4"/>
+          <path d="M132 366 a16 16 0 0 1 14 22 M124 370 a10 10 0 0 1 14 4"/>
+          <circle cx="168" cy="392" r="12" fill="#FCF7F5"/>
+          <path d="M168 380 a12 12 0 0 1 10 17"/>
+          <circle cx="196" cy="380" r="9" fill="#F4E8E4"/>
+        </g>
+        <g fill="none" stroke="#BCA184" stroke-width="2" stroke-linecap="round">
+          <path d="M104 382 q14 -16 34 -10 M110 384 q10 -8 22 -6"/>
+          <path d="M216 386 q-12 -14 -30 -9"/>
+        </g>
+        <line x1="96" y1="408" x2="224" y2="408" stroke="#BCA184" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ C03 · COLECȚII PRINCIPALE ═══════════ -->
+<section id="colectii">
+  <div class="wrap">
+    <div class="cap-sectiune centrat aparitie">
+      <span class="eyebrow">Colecțiile atelierului</span>
+      <h2>Pentru fiecare moment important</h2>
+      <p>Trei mari sărbători de familie, trei colecții lucrate integral manual — restul îl scriem împreună, după povestea ta.</p>
+    </div>
+    <div class="grila-colectii">
+      <a class="card-colectie aparitie" href="#galerie" data-filtru="botez">
+        <div class="card-vitrina tinta-ceara" data-foto-colectie="botez">
+          <svg class="motiv"><use href="#ic-lumanare"/></svg>
+        </div>
+        <div class="card-corp">
+          <h3>Lumânări de botez</h3>
+          <p>Lumânări unicat, împodobite cu flori de mătase, dantelă și detalii alese cu grijă pentru cea mai emoționantă zi a celui mic.</p>
+          <span class="card-link">Vezi modele <svg><use href="#ic-sageata"/></svg></span>
+        </div>
+      </a>
+      <a class="card-colectie aparitie" href="#galerie" data-filtru="nunta">
+        <div class="card-vitrina tinta-roz" data-foto-colectie="nunta">
+          <svg class="motiv"><use href="#ic-buchet"/></svg>
+        </div>
+        <div class="card-corp">
+          <h3>Buchete &amp; accesorii de nuntă</h3>
+          <p>Buchete de mireasă și cocarde din flori de mătase premium sau flori criogenate naturale — frumusețe care nu se ofilește niciodată.</p>
+          <span class="card-link">Vezi modele <svg><use href="#ic-sageata"/></svg></span>
+        </div>
+      </a>
+      <a class="card-colectie aparitie" href="#galerie" data-filtru="mot">
+        <div class="card-vitrina tinta-auriu" data-foto-colectie="mot">
+          <svg class="motiv"><use href="#ic-tavita"/></svg>
+        </div>
+        <div class="card-corp">
+          <h3>Tăvițe de moț &amp; turtă</h3>
+          <p>Seturi decorate temă cu temă pentru tăierea moțului sau ruperea turtei — prima aniversare merită un decor pe măsură.</p>
+          <span class="card-link">Vezi modele <svg><use href="#ic-sageata"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="dantela" aria-hidden="true"></div>
+
+<!-- ═══════════ C04 · DECORAȚIUNI DE SEZON ═══════════ -->
+<section id="sezon">
+  <div class="wrap">
+    <div class="cap-sectiune centrat aparitie">
+      <span class="eyebrow">De-a lungul anului</span>
+      <h2>Decorațiuni de sezon</h2>
+      <p>Mici bucurii lucrate manual pentru fiecare perioadă a anului — de la coronițe de Paște la aranjamente de Crăciun.</p>
+    </div>
+    <div class="grila-sezon">
+      <a class="card-sezon aparitie" href="#galerie" data-filtru="absolvire">
+        <span class="insigna tinta-auriu"><svg><use href="#ic-toca"/></svg></span>
+        <h3>Absolvire</h3>
+        <p>Cocarde, coronițe și buchete pentru absolvenți</p>
+      </a>
+      <a class="card-sezon aparitie" href="#galerie" data-filtru="paste">
+        <span class="insigna tinta-eucalipt"><svg><use href="#ic-ou"/></svg></span>
+        <h3>Paște</h3>
+        <p>Coronițe și decor de masă pentru sărbătorile pascale</p>
+      </a>
+      <a class="card-sezon aparitie" href="#galerie" data-filtru="craciun">
+        <span class="insigna tinta-ceara"><svg><use href="#ic-brad"/></svg></span>
+        <h3>Crăciun</h3>
+        <p>Coronițe de brad, aranjamente și ornamente de iarnă</p>
+      </a>
+      <a class="card-sezon aparitie" href="#galerie" data-filtru="indragostiti">
+        <span class="insigna tinta-roz"><svg><use href="#ic-inima"/></svg></span>
+        <h3>Ziua Îndrăgostiților</h3>
+        <p>Inimi de trandafiri și cadouri pentru cei dragi</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="dantela" aria-hidden="true"></div>
+
+<!-- ═══════════ C05 · PERSONALIZARE ═══════════ -->
+<section id="personalizare">
+  <div class="wrap">
+    <div class="cap-sectiune centrat aparitie">
+      <span class="eyebrow">Serviciul nostru preferat</span>
+      <h2>Ai văzut un model care îți place? <em>Îl facem al tău.</em></h2>
+      <p>Pe internet, la un prieten, într-o vitrină — dacă o idee ți-a rămas în minte, Gabriela o aduce la viață, personalizată pentru evenimentul tău.</p>
+    </div>
+    <div class="pasi">
+      <div class="pas aparitie">
+        <span class="pas-numar">1</span>
+        <h3>Trimite o poză</h3>
+        <p>Orice imagine e un punct de plecare: un model văzut online, la un eveniment sau o schiță din imaginația ta.</p>
+      </div>
+      <div class="pas aparitie">
+        <span class="pas-numar">2</span>
+        <h3>Stabilim detaliile</h3>
+        <p>Culori, flori, panglici, nume, dată — adaptăm modelul exact pe gustul tău și pe tema evenimentului.</p>
+      </div>
+      <div class="pas aparitie">
+        <span class="pas-numar">3</span>
+        <h3>Primești piesa ta unicat</h3>
+        <p>Lucrată de mână, cu materiale de cea mai bună calitate, gata să facă ziua cu adevărat specială.</p>
+      </div>
+    </div>
+    <div class="personalizare-cta aparitie">
+      <a class="btn btn-plin" data-contact="messenger" href="#contact"><svg><use href="#ic-mesaj"/></svg>Trimite-ne poza pe Messenger</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ C06 · TRANSFORMĂRI (ÎNAINTE/DUPĂ) ═══════════ -->
+<!-- ascunsă până la primul exemplu din lista TRANSFORMARI -->
+<section id="transformari" hidden>
+  <div class="wrap">
+    <div class="cap-sectiune centrat aparitie">
+      <span class="eyebrow">Dovada, nu doar promisiunea</span>
+      <h2>De la poza ta, la <em>piesa ta</em></h2>
+      <p>Exemple reale din atelier: imaginea trimisă de client și produsul lucrat de Gabriela după ea.</p>
+    </div>
+    <div class="grila-transformari" id="grilaTransformari"></div>
+  </div>
+</section>
+
+<div class="dantela" aria-hidden="true"></div>
+
+<!-- ═══════════ C07 · GALERIE ═══════════ -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="cap-sectiune centrat aparitie">
+      <span class="eyebrow">Portofoliu</span>
+      <h2>Din lucrările atelierului</h2>
+      <p>Apasă pe o piesă pentru detalii. Filtrează după tipul de eveniment sau sezon.</p>
+    </div>
+    <div class="cautare aparitie">
+      <svg aria-hidden="true"><use href="#ic-cautare"/></svg>
+      <input id="campCautare" type="search" placeholder="Caută în lucrări… (ex: trandafiri, criogenat)" aria-label="Caută în galerie" autocomplete="off">
+    </div>
+    <div class="filtre" role="group" aria-label="Filtre galerie" id="filtre"></div>
+    <p class="galerie-stare" id="galerieStare" aria-live="polite"></p>
+    <div class="grila-galerie" id="grilaGalerie"><p class="galerie-nota">Galeria interactivă nu s-a putut încărca. Ea are nevoie de JavaScript și de fișierele date.js și mecanica.js aflate lângă index.html — deschide site-ul din folderul complet dezarhivat sau accesează varianta publicată online.</p></div>
+    <div class="mai-multe"><button class="btn btn-gol" id="btnMaiMulte" type="button" hidden>Arată mai multe</button></div>
+    <p class="galerie-nota">Galeria se împrospătează constant — cele mai noi creații apar pe <a data-contact="facebook" href="https://facebook.com/lazarescugabriela11" target="_blank" rel="noopener">pagina noastră de Facebook</a>.</p>
+  </div>
+</section>
+
+<div class="dantela" aria-hidden="true"></div>
+
+<!-- ═══════════ C08 · DESPRE ═══════════ -->
+<section id="despre">
+  <div class="wrap">
+    <div class="aparitie">
+      <span class="eyebrow">Povestea noastră</span>
+      <h2>Un atelier de familie, condus cu <em>pasiune</em></h2>
+      <p class="lead">În atelierul nostru, fiecare comandă începe cu o poveste: un botez, o nuntă, o aniversare. Gabriela lucrează manual fiecare piesă, de la prima floare la ultima fundiță.</p>
+      <p class="text-suplimentar">Alegem doar flori de mătase de cea mai bună calitate și flori criogenate naturale, care își păstrează frumusețea ani întregi — pentru că amintirile merită păstrate frumos. Nicio piesă nu seamănă cu alta, iar fiecare client primește ceva creat special pentru el.</p>
+    </div>
+    <div class="card-materiale aparitie">
+      <h3><svg><use href="#ic-scanteie"/></svg>Ce promitem la fiecare comandă</h3>
+      <ul>
+        <li><svg><use href="#ic-check"/></svg><span><strong>Lucru 100% manual</strong> — fără producție de serie, fără compromisuri.</span></li>
+        <li><svg><use href="#ic-frunza"/></svg><span><strong>Flori de mătase premium</strong> — texturi și culori aproape imposibil de deosebit de cele naturale.</span></li>
+        <li><svg><use href="#ic-buchet"/></svg><span><strong>Flori criogenate naturale</strong> — flori adevărate, conservate, care rezistă ani de zile.</span></li>
+        <li><svg><use href="#ic-inima"/></svg><span><strong>Fiecare piesă e unicat</strong> — personalizată după poza și dorințele tale.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="dantela" aria-hidden="true"></div>
+
+<!-- ═══════════ C09 · CONTACT ═══════════ -->
+<section id="contact">
+  <div class="wrap contact-grila">
+    <div class="aparitie">
+      <span class="eyebrow">Contact</span>
+      <h2>Hai să vorbim despre evenimentul tău</h2>
+      <p class="contact-intro">Scrie-ne pe Facebook sau sună-ne — răspundem repede și cu drag. Pentru personalizări, atașează direct poza modelului care ți-a plăcut.</p>
+      <div class="contact-actiuni">
+        <a class="btn btn-ivoriu" data-contact="messenger" href="https://m.me/lazarescugabriela11" target="_blank" rel="noopener"><svg><use href="#ic-mesaj"/></svg>Scrie-ne pe Messenger</a>
+        <a class="btn btn-ivoriu" data-contact="whatsapp" href="#" target="_blank" rel="noopener" hidden><svg><use href="#ic-whatsapp"/></svg>Scrie-ne pe WhatsApp</a>
+        <a class="btn btn-ivoriu" data-contact="instagram" href="#" target="_blank" rel="noopener" hidden><svg><use href="#ic-instagram"/></svg>Vezi-ne pe Instagram</a>
+        <a class="btn btn-ivoriu" data-contact="facebook" href="https://facebook.com/lazarescugabriela11" target="_blank" rel="noopener"><svg><use href="#ic-facebook"/></svg>Vezi pagina de Facebook</a>
+        <a class="btn btn-ivoriu" data-contact="telefon" href="#" hidden><svg><use href="#ic-telefon"/></svg><span data-contact-text="telefon">Sună-ne</span></a>
+      </div>
+    </div>
+    <div class="card-program aparitie">
+      <h3>Bine de știut</h3>
+      <div class="detaliu"><svg><use href="#ic-ceas"/></svg><p><strong>Comenzile personalizate</strong> se lucrează cu programare — scrie-ne din timp, mai ales în sezonul de nunți și botezuri.</p></div>
+      <div class="detaliu"><svg><use href="#ic-pin"/></svg><p><span data-contact-text="oras">România</span> — detaliile de livrare sau ridicare le stabilim împreună, în funcție de comandă.</p></div>
+      <div class="detaliu"><svg><use href="#ic-scanteie"/></svg><p>Nu ai găsit în galerie exact ce cauți? <strong>Trimite-ne o poză</strong> — asta facem cel mai bine.</p></div>
+    </div>
+
+    <div class="card-harta aparitie" id="cardHarta" hidden>
+      <h3><svg aria-hidden="true"><use href="#ic-pin"/></svg>Unde ne găsești</h3>
+      <p class="harta-adresa" id="hartaAdresa"></p>
+      <div class="harta-cadru" id="hartaCadru">
+        <button type="button" id="hartaIncarca">
+          <svg aria-hidden="true"><use href="#ic-pin"/></svg>
+          <span>Apasă pentru a încărca harta Google</span>
+          <small>Harta se încarcă doar la cererea ta — până atunci, nicio informație nu pleacă spre Google.</small>
+        </button>
+      </div>
+      <a class="btn btn-ivoriu" id="hartaLink" href="#" target="_blank" rel="noopener"><svg><use href="#ic-pin"/></svg>Deschide în Google Maps</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ C10 · FOOTER ═══════════ -->
+<footer>
+  <div class="wrap">
+    <span>© <span id="an">2026</span> Atelier Gabriela · Handmade în România, cu suflet.</span>
+    <nav aria-label="Meniu subsol">
+      <a href="#colectii">Colecții</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ═══════════ C11 · BUTON ÎNAPOI SUS ═══════════ -->
+<button id="susBtn" aria-label="Înapoi la începutul paginii" hidden><svg><use href="#ic-sageata"/></svg></button>
+
+<!-- ═══════════ C12 · LIGHTBOX PRODUS ═══════════ -->
+<dialog id="vitrina" aria-labelledby="vitrinaTitlu">
+  <button id="inchideVitrina" aria-label="Închide fereastra"><svg><use href="#ic-x"/></svg></button>
+  <div class="vitrina-corp">
+    <div class="vitrina-media">
+      <div class="vitrina-foto" id="vitrinaFoto"></div>
+      <button class="vitrina-nav" id="vitrinaInapoi" type="button" aria-label="Imaginea anterioară" hidden><svg><use href="#ic-sageata"/></svg></button>
+      <button class="vitrina-nav dreapta" id="vitrinaInainte" type="button" aria-label="Imaginea următoare" hidden><svg><use href="#ic-sageata"/></svg></button>
+      <span class="vitrina-contor" id="vitrinaContor" hidden></span>
+    </div>
+    <div class="vitrina-text">
+      <span class="piesa-cat" id="vitrinaCat"></span>
+      <h3 id="vitrinaTitlu"></h3>
+      <p id="vitrinaDesc"></p>
+      <p class="vitrina-pret" id="vitrinaPret" hidden></p>
+      <a class="btn btn-plin" data-contact="messenger" href="https://m.me/lazarescugabriela11" target="_blank" rel="noopener"><svg><use href="#ic-mesaj"/></svg>Întreabă de acest model</a>
+      <div class="vitrina-nav-produs">
+        <button type="button" id="produsAnterior" hidden>← Piesa anterioară</button>
+        <button type="button" id="produsUrmator" hidden>Piesa următoare →</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="date.js"></script>
+<script src="mecanica.js"></script>
+</body>
+</html>

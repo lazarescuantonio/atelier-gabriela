@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- ATENȚIE: pagina 404 e servită de GitHub Pages de la ORICE adresă greșită,
+     deci toate căile de aici sunt ABSOLUTE, cu numele depozitului inclus.
+     Dacă redenumești depozitul sau treci pe domeniu propriu, actualizează
+     prefixul /atelier-gabriela/ din acest fișier (4 locuri). -->
+<html lang="ro">
+<head>
+<script>
+document.documentElement.classList.add("js");
+/* Plasă de siguranță: dacă stil.css nu e lângă index.html (fișier deschis singur,
+   în afara folderului complet), pagina explică singură ce lipsește. */
+window.addEventListener("load", function () {
+  if (getComputedStyle(document.documentElement).getPropertyValue("--ivoriu").trim()) return;
+  var b = document.createElement("div");
+  b.textContent = "Tema site-ului nu s-a găsit: fișierul stil.css trebuie să stea în același folder cu index.html. Dezarhivează pachetul complet și deschide index.html din folderul rezultat — sau vezi site-ul publicat online.";
+  b.style.cssText = "position:sticky;top:0;z-index:99;background:#7C2D2D;color:#fff;padding:14px 18px;font:600 15px/1.5 system-ui,sans-serif;text-align:center";
+  document.body.prepend(b);
+});
+</script>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-FGImOa8qeWEjeV7JdCKma0QBQ3QqLyJdYEtwTBm65w0='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://www.google.com https://maps.google.com https://consent.google.com; base-uri 'self'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagina nu există — Atelier Gabriela</title>
+<meta name="robots" content="noindex">
+<link rel="preload" as="font" type="font/woff2" href="/atelier-gabriela/fonturi/manrope-latin-ext-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/atelier-gabriela/fonturi/manrope-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/atelier-gabriela/fonturi/cormorant-garamond-latin-ext-600-normal.woff2" crossorigin>
+<link rel="stylesheet" href="/atelier-gabriela/stil.css">
+</head>
+<body>
+<main class="pagina-404">
+  <div>
+    <div class="semn" aria-hidden="true"></div>
+    <h1>Pagina asta nu există</h1>
+    <p class="lead">Poate linkul a fost scris greșit sau pagina s-a mutat. Atelierul e tot aici, cu toate colecțiile la locul lor.</p>
+    <a class="btn btn-plin" href="/atelier-gabriela/">Înapoi la atelier</a>
+  </div>
+</main>
+</body>
+</html>
